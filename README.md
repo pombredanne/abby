@@ -1,6 +1,6 @@
 # Requirements
 * [Google AppEngine SDK](http://code.google.com/appengine/downloads.html)
-* [Python](http://www.python.org/getit/) >= 2.5
+* [Python](http://www.python.org/getit/) 2.7
 
 # Usage
 

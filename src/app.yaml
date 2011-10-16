@@ -1,0 +1,42 @@
+application: abby
+version: first
+runtime: python27
+api_version: 1
+threadsafe: true
+
+default_expiration: "5d"
+
+libraries:
+- name: webapp2
+  version: latest
+
+handlers:
+- url: /_ah/admin/.*
+  script: google.appengine.ext.admin.application
+  login: admin
+
+- url: /favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
+
+- url: .*
+  script: main.application
+
+
+builtins:
+- appstats: on
+- remote_api: on
+
+inbound_services:
+- warmup
+
+admin_console:
+  pages:
+  - name: interactive console
+    url: /_ah/admin/interactive
+
+error_handlers:
+  - file: default_error.html
+
+  - error_code: over_quota
+    file: over_quota.html
