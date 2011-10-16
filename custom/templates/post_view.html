@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- @todo: Add WAI-ARIA roles http://www.w3.org/WAI/PF/aria/ -->
+<!-- @todo: More http://www.w3.org/TR/html5/-->
+<!-- @todo: Add:
+- <link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="Microformats Wiki (en)" />
+- <link rel=altenate
+- <linl rel=icon
+  -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="british,type face,font,fonts,highway,highways">
+    <meta name="author" content="Lukasz Dobrzanski">
+    <meta name="description" content="Some longer description">
+  </head>
+  <body>
+    <header>
+      <a id="logo" href="/">Logo</a>
+      <form action="http://www.google.com/search" method="get" role="search">
+        <label>Search <input type="search" name="q" placeholder="Some Term"></label><input type="submit" value="➜">
+      </form>
+    </header>  
+    <article class="post">
+      <header>
+        <hgroup>
+          <h1>Article title</h1>
+          <h2>Article subtitle</h2>
+        </hgroup>  
+        <nav>
+          <h2>Navigation</h2>
+          <ol>
+            <li><a href="#one">First section</a></li>
+            <li><a href="#two">Second section</a></li>
+            <li><a href="#summary">Summary</a></li>
+          </ol>
+        </nav>
+      </header>
+      <aside>
+        <h2>More Information</h2>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </aside>
+      <section id="excerp">
+      </section>
+      <section id="one">
+        <h2>title 1</h2>
+        <p>some text</p>
+      </section>
+      <section id="two">
+        <h2>title 2</h2>
+        <p>Some other text</p>
+      </section>     
+      <section id="Summary">
+        <h2>Summary Title</h2>
+        <p>Some other text</p>
+      </section>
+      
+      <footer id="">
+        <ol>
+          <li class="tags">
+            <ul class="tags">
+              <li><a rel="tag" href="#">#tag1</a></li>
+              <li><a rel="tag" href="#">#tag2</a></li>
+              <li><a rel="tag" href="#">#tag3</a></li>
+            </ul>
+          </li>
+          <li class="date"><p>Posted <time pubdate datetime="2009-10-10T14:36-08:00">Thursday</time>.</p></li>
+        </ol>
+      </footer>  
+ 
+      <section id="comments">
+        <h2>X Comments</h2>
+        <p>
+          <label for"toogle_comments">Show <a id="toogle_comments" href="#">▼</a></label>
+    <!--      <a id="toogle_comments" href="#">▼</a>-->
+        </p>
+    <!--      <span>▼</span>
+          <span><label>Show<span class=>▼</span></label></span>
+        </a>-->
+        <article>
+          <footer>
+            <p>Posted by: George Washington</p>
+            <p><time pubdate datetime="2009-10-10T19:10-08:00"></time></p>
+          </footer>
+          <p>Yeah! Especially when talking about your lobbyist friends!</p>
+        </article>
+        <article>
+          <footer>
+            <p>Posted by: George Hammond</p>
+            <p><time pubdate datetime="2009-10-10T19:15-08:00"></time></p>
+          </footer>
+          <p>Hey, you have the same first name as me.</p>
+        </article>
+      </section>
+        
+      <nav id="pagination">
+        <a rel="prev" href=""><span>← Previous</span></a>
+        <span class="sep">•</span>
+        <a rel="next" href=""><span>Next →</span></a>
+      </nav>
+    </article>
+    
+    <footer>   			
+      <nav>	 
+        <ul id="footer-links">
+          <li class=""><a href="/rss">RSS</a></li>
+          <li class=""><a href="/random">Random</a></li>
+          <li class=""><a href="/archive">Archive</a></li>
+          <li class=""><a href="/mobile">Mobile</a></li>
+        </ul>
+        <p>© 2011 by ssspiochld</p>
+        <p><a href="about.html">About</a></p>
+        <span class="tumblr">Powered by <a href="http://www.tumblr.com/">Django</a></span>
+      </nav>
+    </footer>                                                                                                  
+  </body>
+</html>

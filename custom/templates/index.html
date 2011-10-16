@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="british,type face,font,fonts,highway,highways">
+    <meta name="author" content="Lukasz Dobrzanski">
+    <meta name="description" content="Some longer description">
+<!-- @todo add RSS/Atom <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/html">-->
+<!-- @todo add pingback <link rel="pingback" href="">-->
+    <link rel="icon" href="/media/images/favicon.ico">                                                                                                  
+  </head>
+  <body>
+  
+    <header>
+      <h1><a id="logo" href="/">Logo</a></h1>
+      <form action="/search" method="get">
+        <label>Search<input type="search" name="q" placeholder="Some term"></label><input type="submit" value="→">
+      </form>
+    </header>
+  
+    <nav>
+      <a href="/posts/">Writing</a>
+      <a href="/wild/">Going Wild</a>
+      <a href="/about/">Who am I</a>
+    </nav>
+    
+    <section id="articles">
+      {% for item in items %}
+        <article class="post" id="{{ item.key.name }}">
+          <header>
+            <h3><a href="{{ item.get_absolute_url }}">{{ item.get_absolute_url }}</a></h3>
+            <span class="date">{{ item.date_published }}</span>
+          </header>
+          <section class="abstract">
+            {{ item.abstract_html }}
+          </section>
+          <div class="more"><a href="{{ item.get_absolute_url }}">read on &raquo;</a></div>
+        </article>
+      {% endfor %}
+    </section>
+    
+    <nav id="pagination">
+    <a rel="prev" href=""><span>← Previous</span></a>
+      <span class="sep">•</span>
+      <a rel="next" href=""><span>Next →</span></a>
+    </nav>
+    
+    <footer>
+      <p>© 2011 by lukmdo</p>
+      <p><a href="/about/">About</a></p>
+    </footer>
+  
+  </body>
+</html>
